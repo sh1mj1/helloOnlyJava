@@ -1,9 +1,10 @@
-package com.example.helloOnlyJava.domain;
+package com.example.helloOnlyJava.core.discount;
 
 import com.example.helloOnlyJava.entity.Grade;
 import com.example.helloOnlyJava.entity.Member;
 
 public class FixDiscountPolicy implements DiscountPolicy {
+
     private int discountFixAmount = 1000;
 
     /**
@@ -16,7 +17,7 @@ public class FixDiscountPolicy implements DiscountPolicy {
     public int discount(Member member, int price) {
         // enum type은 == 으로 비교
         if (member.getGrade() == Grade.VIP) {
-            return 1000;
+            return discountFixAmount;
         } else {
             return 0;
         }

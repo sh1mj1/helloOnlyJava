@@ -6,7 +6,21 @@ import com.example.helloOnlyJava.repository.MemoryMemberRepository;
 
 public class MemberServiceImp implements MemberService{
 
-    public final MemberRepository memberRepository = new MemoryMemberRepository();
+    //    public final MemberRepository memberRepository = new MemoryMemberRepository();
+    // 직접 객체를 생성하는 것 대신 아래처럼 생성자를 통해 주입.
+    private final MemberRepository memberRepository;
+
+    /**
+     * appConfig 객체는 memoryMemberRepository 객체를 생성
+     * 그 참조값을 memberServiceImp 을 생성하면서 생성자로 전달한다.
+     * 클라이언트인 memberServiceImp 입장에서는 의존관계를 마치 외부에서 주입해주는 것 같다.
+     * DI(Dependency Injection) 우리말로 의존관계 주입 또는 의존성 주입이라 한다.
+     * @param memberRepository
+     */
+    public MemberServiceImp(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
 
     /*
      * MemberRepository, MemoryMemberRepository 둘다 의존함...

@@ -1,4 +1,4 @@
-package com.example.helloOnlyJava.domain;
+package com.example.helloOnlyJava.core.discount;
 
 import com.example.helloOnlyJava.entity.Member;
 

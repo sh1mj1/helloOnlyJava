@@ -1,15 +1,25 @@
-package com.example.helloOnlyJava;
+package com.example.helloOnlyJava.service;
 
+import com.example.helloOnlyJava.AppConfig;
 import com.example.helloOnlyJava.entity.Grade;
 import com.example.helloOnlyJava.entity.Member;
 import com.example.helloOnlyJava.service.MemberService;
 import com.example.helloOnlyJava.service.MemberServiceImp;
 import org.assertj.core.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 public class MemberServiceTest {
 
-    MemberService memberService = new MemberServiceImp();
+//    MemberService memberService = new MemberServiceImp();
+//    아래처럼 변경
+    MemberService memberService;
+
+    @BeforeEach
+    void beforeEach() {
+        AppConfig appConfig = new AppConfig();
+        memberService = appConfig.memberService();
+    }
 
     @Test
     void join() {
