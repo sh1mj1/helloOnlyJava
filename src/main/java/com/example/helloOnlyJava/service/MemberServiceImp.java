@@ -10,6 +10,12 @@ public class MemberServiceImp implements MemberService{
     // 직접 객체를 생성하는 것 대신 아래처럼 생성자를 통해 주입.
     private final MemberRepository memberRepository;
 
+
+    // Test 용도
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
+
     /**
      * appConfig 객체는 memoryMemberRepository 객체를 생성
      * 그 참조값을 memberServiceImp 을 생성하면서 생성자로 전달한다.
