@@ -1,6 +1,9 @@
 package com.example.helloOnlyJava.entity;
 
 import com.example.helloOnlyJava.entity.Grade;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Optional;
 
 public class Member {
     private Long id;
@@ -36,4 +39,6 @@ public class Member {
     public void setGrade(Grade grade) {
         this.grade = grade;
     }
+
+
 }

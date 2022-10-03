@@ -13,15 +13,32 @@ import org.springframework.stereotype.Component;
 @Component /* component 어노테이션을 넣어서 스캔 대상이 됨. */
 public class OrderServiceImp implements OrderService{
 
-    private final MemberRepository memberRepository;
-    private final DiscountPolicy discountPolicy;
+    private MemberRepository memberRepository;
+    private DiscountPolicy discountPolicy;
 
+//    private final MemberRepository memberRepository;
+//    private final DiscountPolicy discountPolicy;
 
+//
     @Autowired /* 자동으로 DI 주입. */
     public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
+
+// 수정자 방식 주입 (setter 주입)
+    @Autowired
+    public void setMemberRepository(MemberRepository memberRepository) {
+        this.memberRepository = memberRepository;
+    }
+
+    @Autowired
+    public void setDiscountPolicy(DiscountPolicy discountPolicy) {
+        this.discountPolicy = discountPolicy;
+    }
+
+
+
 
     public MemberRepository getMemberRepository() {
         return memberRepository;

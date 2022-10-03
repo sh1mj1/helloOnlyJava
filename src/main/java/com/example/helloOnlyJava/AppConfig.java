@@ -37,6 +37,7 @@ public class AppConfig {
         return new OrderServiceImp(
                 memberRepository(),
                 discountPolicy());
+//        return null;
     }
 
 }

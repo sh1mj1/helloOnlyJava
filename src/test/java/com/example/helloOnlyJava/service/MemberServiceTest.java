@@ -8,6 +8,9 @@ import com.example.helloOnlyJava.service.MemberServiceImp;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+
+import java.util.Optional;
 
 public class MemberServiceTest {
 
@@ -32,5 +35,6 @@ public class MemberServiceTest {
         Assertions.assertThat(member).isEqualTo(findMember);
 
     }
+
 }
 

@@ -1,9 +1,11 @@
 package com.example.helloOnlyJava.service;
 
 import com.example.helloOnlyJava.AppConfig;
+import com.example.helloOnlyJava.core.discount.FixDiscountPolicy;
 import com.example.helloOnlyJava.entity.Grade;
 import com.example.helloOnlyJava.entity.Member;
 import com.example.helloOnlyJava.entity.Order;
+import com.example.helloOnlyJava.repository.MemoryMemberRepository;
 import com.example.helloOnlyJava.service.MemberService;
 import com.example.helloOnlyJava.service.MemberServiceImp;
 import com.example.helloOnlyJava.service.OrderService;
@@ -11,6 +13,8 @@ import com.example.helloOnlyJava.service.OrderServiceImp;
 import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 public class OrderServiceTest {
 
@@ -40,5 +44,25 @@ public class OrderServiceTest {
         Order order = orderService.createOrder(memberId, "itemA", 10000);
         Assertions.assertThat(order.getDiscountPrice()).isEqualTo(1000);
     }
+
+
+/*
+    @Test
+    void createOrder(){
+//        MemoryMemberRepository memberRepository = new MemoryMemberRepository();
+//        memberRepository.save(new Member(1L, "name", Grade.VIP));
+//
+//        OrderServiceImp orderService = new OrderServiceImp(memberRepository, new FixDiscountPolicy());
+//        Order order = orderService.createOrder(1L, "itemA", 10000);
+//
+//        assertThat(order.getDiscountPrice()).isEqualTo(1000);
+
+//
+//        OrderServiceImp orderService = new OrderServiceImp();
+//        Order order = orderService.createOrder(1L, "itemA", 10000);
+
+    }
+ */
+
 }
 

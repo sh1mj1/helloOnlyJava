@@ -3,8 +3,11 @@ package com.example.helloOnlyJava.service;
 import com.example.helloOnlyJava.entity.Member;
 import com.example.helloOnlyJava.repository.MemberRepository;
 import com.example.helloOnlyJava.repository.MemoryMemberRepository;
+import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import java.util.Optional;
 
 @Component
 public class MemberServiceImp implements MemberService{
@@ -44,4 +47,6 @@ public class MemberServiceImp implements MemberService{
     public Member findMember(Long memberId) {
         return memberRepository.findById(memberId);
     }
+
+
 }
