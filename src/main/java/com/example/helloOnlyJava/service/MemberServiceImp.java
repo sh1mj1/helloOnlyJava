@@ -3,7 +3,10 @@ package com.example.helloOnlyJava.service;
 import com.example.helloOnlyJava.entity.Member;
 import com.example.helloOnlyJava.repository.MemberRepository;
 import com.example.helloOnlyJava.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component
 public class MemberServiceImp implements MemberService{
 
     //    public final MemberRepository memberRepository = new MemoryMemberRepository();
@@ -16,13 +19,7 @@ public class MemberServiceImp implements MemberService{
         return memberRepository;
     }
 
-    /**
-     * appConfig 객체는 memoryMemberRepository 객체를 생성
-     * 그 참조값을 memberServiceImp 을 생성하면서 생성자로 전달한다.
-     * 클라이언트인 memberServiceImp 입장에서는 의존관계를 마치 외부에서 주입해주는 것 같다.
-     * DI(Dependency Injection) 우리말로 의존관계 주입 또는 의존성 주입이라 한다.
-     * @param memberRepository
-     */
+    @Autowired
     public MemberServiceImp(MemberRepository memberRepository) {
         this.memberRepository = memberRepository;
     }

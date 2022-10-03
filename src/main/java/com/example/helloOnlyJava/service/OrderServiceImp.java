@@ -7,27 +7,25 @@ import com.example.helloOnlyJava.entity.Member;
 import com.example.helloOnlyJava.entity.Order;
 import com.example.helloOnlyJava.repository.MemberRepository;
 import com.example.helloOnlyJava.repository.MemoryMemberRepository;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+@Component /* component 어노테이션을 넣어서 스캔 대상이 됨. */
 public class OrderServiceImp implements OrderService{
 
-
-//    private final MemberRepository memberRepository = new MemoryMemberRepository();
-    // 직접 객체를 생성하는 것 대신 아래처럼 생성자를 통해 주입.
     private final MemberRepository memberRepository;
     private final DiscountPolicy discountPolicy;
 
-    // 테스트 용도
-    public MemberRepository getMemberRepository() {
-        return memberRepository;
-    }
 
-
+    @Autowired /* 자동으로 DI 주입. */
     public OrderServiceImp(MemberRepository memberRepository, DiscountPolicy discountPolicy) {
         this.memberRepository = memberRepository;
         this.discountPolicy = discountPolicy;
     }
 
-
+    public MemberRepository getMemberRepository() {
+        return memberRepository;
+    }
 
     @Override
     public Order createOrder(Long memberId, String itemName, int itemPrice) {

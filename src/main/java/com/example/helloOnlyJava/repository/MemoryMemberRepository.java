@@ -1,11 +1,12 @@
 package com.example.helloOnlyJava.repository;
 
 import com.example.helloOnlyJava.entity.Member;
+import org.springframework.stereotype.Component;
 
 import java.util.Map;
 import java.util.concurrent.ConcurrentHashMap;
 
-// 구현부
+@Component
 public class MemoryMemberRepository implements MemberRepository{
 
     private static Map<Long, Member> store = new ConcurrentHashMap<>();
