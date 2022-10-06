@@ -11,6 +11,7 @@
     <bean id="orderService" class="com.example.helloOnlyJava.service.OrderServiceImp">
         <constructor-arg name="memberRepository" ref="memberRepository"/>
         <constructor-arg name="discountPolicy" ref="discountPolicy"/>
+        <property name="memberRepository" ref="memberRepository"/>
     </bean>
 
     <bean id="discountPolicy" class="com.example.helloOnlyJava.core.discount.RateDiscountPolicy"/>

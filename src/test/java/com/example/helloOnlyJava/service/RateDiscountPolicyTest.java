@@ -13,7 +13,7 @@ public class RateDiscountPolicyTest {
 
 //    RateDiscountPolicy discountPolicy = new RateDiscountPolicy();
 
-    DiscountPolicy discountPolicy;
+     DiscountPolicy discountPolicy;
 
     @BeforeEach
     void setUp() {
