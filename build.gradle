@@ -31,7 +31,8 @@ dependencies {
 	annotationProcessor 'org.projectlombok:lombok'
 	testCompileOnly 'org.projectlombok:lombok'
 	testAnnotationProcessor 'org.projectlombok:lombok'
-	//
+	//JSR Provider
+	implementation 'javax.inject:javax.inject:1'
 
 }
 
